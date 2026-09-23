@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro:bit Racing Lab</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f4f7fb;color:#172033;line-height:1.6}
+header{background:linear-gradient(135deg,#111827,#2563eb);color:white;padding:55px 8%;text-align:center}
+header h1{font-size:clamp(2.2rem,6vw,4.5rem);margin-bottom:10px}
+header p{font-size:1.15rem;max-width:760px;margin:auto}
+.badge{display:inline-block;background:#22c55e;padding:7px 15px;border-radius:30px;font-weight:bold;margin-bottom:18px}
+nav{position:sticky;top:0;background:white;padding:14px;text-align:center;box-shadow:0 2px 12px #0002;z-index:5}
+nav a{margin:0 10px;color:#1d4ed8;text-decoration:none;font-weight:bold}
+section{max-width:1050px;margin:45px auto;padding:0 20px}
+h2{font-size:2rem;color:#1d4ed8;margin-bottom:15px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;padding:24px;border-radius:18px;box-shadow:0 5px 20px #00000012}
+.card h3{margin-bottom:8px;color:#111827}
+.icon{font-size:2.2rem}
+.track{background:#d1d5db;border:10px solid #8b5a2b;border-radius:24px;padding:28px;overflow:hidden}
+.road{height:180px;background:#343434;border-radius:18px;position:relative;display:flex;align-items:center}
+.road:before{content:"";position:absolute;left:0;right:0;top:50%;border-top:7px dashed white}
+.car{font-size:4rem;position:relative;z-index:2;margin-left:35px}
+.obstacle{background:#ef4444;color:white;padding:12px;border-radius:10px;font-weight:bold;position:absolute;z-index:3}
+.o1{left:32%}.o2{left:57%}.o3{left:80%}
+.flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-top:20px}
+.step{background:#eff6ff;border:2px solid #60a5fa;padding:14px 18px;border-radius:14px;font-weight:bold}
+.arrow{font-size:1.5rem;color:#2563eb}
+.questions{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.question{background:white;border-left:6px solid #22c55e;padding:20px;border-radius:12px;box-shadow:0 4px 15px #0001}
+.answer{margin-top:10px;color:#15803d;font-weight:bold}
+footer{margin-top:50px;background:#111827;color:white;text-align:center;padding:35px 20px}
+.highlight{background:#dbeafe;padding:22px;border-radius:18px;margin-top:20px}
+</style>
+</head>
+<body>
+
+<header>
+<span class="badge">PROYECTO STEAM • GRADO 11</span>
+<h1>🏎️ Micro:bit Racing Lab</h1>
+<p>Carros de carrera controlados con micro:bit que combinan tecnología, química, creatividad y trabajo en equipo.</p>
+</header>
+
+<nav>
+<a href="#proyecto">Proyecto</a>
+<a href="#materiales">Materiales</a>
+<a href="#pista">Pista</a>
+<a href="#funcionamiento">Funcionamiento</a>
+<a href="#quimica">Química</a><a href="#integrantes">Integrantes</a>
+</nav>
+
+<section id="proyecto">
+<h2>🔬 ¿En qué consiste?</h2>
+<p>
+Nuestro proyecto consiste en construir carros de carrera controlados mediante
+<strong>micro:bit</strong> y hacerlos competir en una pista elaborada principalmente
+con cartón. La actividad integra conocimientos de tecnología y química mediante
+una dinámica de preguntas y obstáculos.
+</p>
+<div class="highlight">
+<strong>🎯 Objetivo:</strong> aprender química de una manera dinámica mientras
+se utilizan herramientas tecnológicas para controlar los carros.
+</div>
+</section>
+
+<section id="materiales">
+<h2>🧰 Materiales</h2>
+<div class="card-grid">
+<div class="card"><div class="icon">📦</div><h3>Cartón</h3><p>Se utiliza para construir la pista y diferentes elementos del circuito.</p></div>
+<div class="card"><div class="icon">⚫</div><h3>Cinta negra</h3><p>Ayuda a marcar y delimitar el recorrido de los carros.</p></div>
+<div class="card"><div class="icon">🎨</div><h3>Pinturas</h3><p>Permiten decorar la pista y hacerla más llamativa.</p></div>
+<div class="card"><div class="icon">🤖</div><h3>Micro:bit</h3><p>Controla los movimientos de los carros.</p></div>
+<div class="card"><div class="icon">⚙️</div><h3>Motores y ruedas</h3><p>Permiten que los carros puedan desplazarse.</p></div>
+<div class="card"><div class="icon">🔋</div><h3>Portapilas y cables</h3><p>Proporcionan energía y conexiones al sistema.</p></div>
+</div>
+</section>
+
+<section id="pista">
+<h2>🏁 Nuestra pista</h2>
+<div class="track">
+<div class="road">
+<div class="car">🏎️</div>
+<div class="obstacle o1">🚧 1</div>
+<div class="obstacle o2">🚧 2</div>
+<div class="obstacle o3">🚧 3</div>
+</div>
+</div>
+<p style="text-align:center;margin-top:12px">La cinta negra representa el recorrido y los tres obstáculos son los retos de química.</p>
+</section>
+
+<section id="funcionamiento">
+<h2>⚡ ¿Cómo funciona?</h2>
+<div class="flow">
+<div class="step">🏎️ El carro avanza</div><span class="arrow">→</span>
+<div class="step">🛑 Llega al obstáculo</div><span class="arrow">→</span>
+<div class="step">🧪 Pregunta de química</div><span class="arrow">→</span>
+<div class="step">✅ Respuesta correcta</div><span class="arrow">→</span>
+<div class="step">🏎️ Rodea el obstáculo</div><span class="arrow">→</span>
+<div class="step">🏁 Continúa la carrera</div>
+</div>
+<div class="highlight">
+<strong>Si responde correctamente:</strong> el carro puede rodear el obstáculo y continuar hasta el siguiente reto.
+<br><br>
+<strong>Si no responde correctamente:</strong> el carro permanece detenido mientras se continúa con la dinámica de aprendizaje.
+</div>
+</section>
+
+<section id="quimica">
+<h2>🧪 Preguntas de química</h2>
+<div class="questions">
+<div class="question"><strong>1. ¿Cuál es el símbolo químico del oxígeno?</strong><div class="answer">Respuesta: O</div></div>
+<div class="question"><strong>2. ¿Cuál es el símbolo químico del carbono?</strong><div class="answer">Respuesta: C</div></div>
+<div class="question"><strong>3. ¿Cuál es el símbolo químico del sodio?</strong><div class="answer">Respuesta: Na</div></div>
+</div>
+</section>
+
+
+<section id="integrantes">
+<h2>👥 Integrantes del proyecto</h2>
+<div class="card-grid">
+<div class="card"><h3>Estefany Mestizo</h3></div>
+<div class="card"><h3>Angela Erazo</h3></div>
+<div class="card"><h3>Mariana Garzón</h3></div>
+<div class="card"><h3>Anyi Daniela Quinayas</h3></div>
+<div class="card"><h3>Carol Vanesa Orozco</h3></div>
+<div class="card"><h3>Juan David Sotelo</h3></div>
+<div class="card"><h3>Aleks Santiago Roberto</h3></div>
+<div class="card"><h3>David Bolaños</h3></div>
+<div class="card"><h3>Lennin Guerrero</h3></div>
+</div>
+</section>
+
+<section>
+<h2>🌱 Ciencia, tecnología e innovación</h2>
+<div class="card-grid">
+<div class="card"><h3>🔬 Ciencia</h3><p>Aplicamos conocimientos básicos de química y ciencias naturales.</p></div>
+<div class="card"><h3>💻 Tecnología</h3><p>Usamos micro:bit, motores y componentes electrónicos.</p></div>
+<div class="card"><h3>💡 Innovación</h3><p>Convertimos una carrera de carros en una actividad educativa.</p></div>
+<div class="card"><h3>♻️ Educación ambiental</h3><p>Reutilizamos cartón y otros materiales para construir la pista.</p></div>
+</div>
+</section>
+
+<footer>
+<h2 style="color:white">🏆 ¡Corre, responde y llega a la meta!</h2>
+<p>Proyecto escolar de carros de carrera con micro:bit • STEAM</p>
+</footer>
+
+</body>
+</html>
